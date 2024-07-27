@@ -1,6 +1,6 @@
 def validate(input_str):
-    valid = False  # Boolean to check if it is a valid email or not 
-    if input_str.count("@") == 1:  # Check for exactly one "@"
+    valid = False  # Boolean to check if it is a valid email adress or not 
+    if input_str.count("@") == 1:
         mail_recipients = input_str.split("@")
 
         # Recipient Name Analysis
@@ -15,11 +15,11 @@ def validate(input_str):
                         valid = False
                         break  # Stop checking further if an invalid character is found
                 else:
-                    valid = True  # Only set valid to True if all characters are valid
+                    valid = True 
             else:
-                valid = False  # Invalid if special characters are at the beginning or end
+                valid = False 
         else:
-            valid = False  # Invalid length
+            valid = False
 
         # Domain Name Analysis
         if valid:
@@ -33,11 +33,11 @@ def validate(input_str):
                             valid = False
                             break
                     else:
-                        valid = True  # Only set valid to True if all characters are valid
+                        valid = True  
                 else:
-                    valid = False  # Invalid domain name length
+                    valid = False  
             else:
-                valid = False  # Invalid domain format (missing dot)
+                valid = False  
 
         # Top-Level Domain Name Analysis
         if valid and len(domain_parts) > 1:
